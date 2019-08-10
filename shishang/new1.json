@@ -1,0 +1,132 @@
+{
+		"classify001":{
+		"name" : "小米手机",
+		"list" : [
+			{
+				"id" : "shop012",
+				"name" : "小米1",
+				"src" : "./img/lieb/9.jpg",
+				"price" : "999"
+			},
+			{
+				"id" : "shop0012",
+				"name" : "小米2",
+				"src" : "./img/lieb/2.jpg",
+				"price" : "465"
+			},
+			{
+				"id" : "shop03",
+				"name" : "小米3",
+				"src" : "./img/lieb/3.jpg",
+				"price" : "398"
+			},
+			{
+				"id" : "shop004",
+				"name" : "小米4",
+				"src" : "./img/lieb/4.jpg",
+				"price" : "7824"
+			},
+			{
+				"id" : "shop05",
+				"name" : "小米5",
+				"src" : "./img/lieb/5.jpg",
+				"price" : "7878"
+			},
+			{
+				"id" : "shop06",
+				"name" : "小米6",
+				"src" : "./img/lieb/6.jpg",
+				"price" : "456"
+			},
+			{
+				"id" : "shop07",
+				"name" : "小米7",
+				"src" : "./img/lieb/7.jpg",
+				"price" : "4563687"
+			},
+			{
+				"id" : "shop08",
+				"name" : "小米8",
+				"src" : "./img/lieb/8.jpg",
+				"price" : "4545"
+			},
+			{
+				"id" : "shop09",
+				"name" : "小米9",
+				"src" : "./img/lieb/9.jpg",
+				"price" : "99489"
+			},
+			{
+				"id" : "shop10",
+				"name" : "小米10",
+				"src" : "./img/lieb/10.jpg",
+				"price" : "788"
+			}
+		]
+	},
+	"classify002":{
+		"name" : "三星手机",
+		"list" : [
+			{
+				"id" : "shop6611",
+				"name" : "三星11",
+				"src" : "./img/lieb/11.jpg",
+				"price" : "455"
+			},
+			{
+				"id" : "shop02",
+				"name" : "三星12",
+				"src" : "./img/lieb/12.jpg",
+				"price" : "233"
+			},
+			{
+				"id" : "shop13",
+				"name" : "三星13",
+				"src" : "./img/lieb/13.jpg",
+				"price" : "488"
+			},
+			{
+				"id" : "shop04",
+				"name" : "三星14",
+				"src" : "./img/lieb/14.jpg",
+				"price" : "785"
+			},
+			{
+				"id" : "shop15",
+				"name" : "三星15",
+				"src" : "./img/lieb/15.jpg",
+				"price" : "4524"
+			},
+			{
+				"id" : "shop16",
+				"name" : "三星16",
+				"src" : "./img/lieb/16.jpg",
+				"price" : "486"
+			},
+			{
+				"id" : "shop17",
+				"name" : "三星17",
+				"src" : "./img/lieb/17.jpg",
+				"price" : "234"
+			},
+			{
+				"id" : "shop18",
+				"name" : "三星18",
+				"src" : "./img/lieb/18.jpg",
+				"price" : "567"
+			},
+			{
+				"id" : "shop19",
+				"name" : "三星9",
+				"src" : "./img/lieb/9.jpg",
+				"price" : "124"
+			},
+			{
+				"id" : "shop20",
+				"name" : "三星20",
+				"src" : "./img/lieb/20.jpg",
+				"price" : "222"
+			}
+		]
+	}
+}

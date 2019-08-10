@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body { font-size: 12px; background: #fff; color: #666; font-family: arial,\5b8b\4f53; overflow-y: scroll\9; *overflow-y: auto; }
+			body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, b, p, img, pre, form, fieldset, input, textarea, blockquote { margin: 0; padding: 0; }
+			table, td, tr, th { font-size: 12px; }
+			a { text-decoration: none; color: #666; }
+			table { margin: 0 auto; }
+			img { vertical-align: top; border: 0 none; }
+			ol, ul, li { list-style-type: none; }
+			caption, th { text-align: left; }
+			h1, h2, h3, h4, h5, h6 { font-size: 12px; }
+			a:hover { text-decoration: none; }
+			b, em { font-style: normal; font-weight: normal; }
+			.clear { clear: both; }
+			.LETTER-RED { color: #ff1a3a !important; }
+			
+			#btou{
+				margin: 0 auto;
+				width:1000px;
+				height:60px;
+				border:1px solid red;
+				margin-top:50px;
+			}
+			span{
+				display: inline-block;
+				float: left;
+				width: 100px;
+				height: 40px;
+				text-align: center;
+				line-height: 40px;
+				padding: 10px 0;
+				border-right: 1px solid red;
+				cursor: pointer;
+				/*box-sizing:border-box;*/
+			}
+			.shoplist{
+				margin: 0 auto;
+				width:1010px;
+				/*height:1000px;*/
+				background-color:chartreuse;
+				margin-top:50px;
+			}
+			.shoplist li{
+				width:250px;
+				height:280px;
+				float:left;
+				border:1px solid white;
+			}
+			.shoplist img{
+				width:150px;
+				height:180px;
+			}
+			.shoplist li:hover{
+				border:1px solid red;
+				text-align:center;
+				transition-duration: 2s;
+			}
+			
+			.shoplist li a{
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="btou">
+			<!--<span></span>-->
+		</div>
+		<ul class="shoplist">
+			<!--<li>
+				<a href="page.html">
+					<img src="img/1.jpg" alt="" />
+					<p>小米1</p>
+					<p>890</p>
+				</a>
+				<button>加入购物车</button>
+			</li>-->
+		</ul>
+	</body>
+</html>
+<script>
+	var _btou = document.getElementById("btou");
+	var _shoplist = document.getElementsByClassName("shoplist")[0];
+
+		var xhr = null;
+		if( window.XMLHttpRequest ){
+			xhr = new XMLHttpRequest();
+		}else{
+			xhr = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		xhr.open( "GET","new1.json?id=" + new Date().getTime() );
+		xhr.send();
+		xhr.onreadystatechange = function(){
+			if( xhr.readyState == 4 && xhr.status == 200 ){
+				var  shuj = JSON.parse(xhr.responseText) ;
+				var title = "";
+				let str = "";
+				for(var i in shuj){
+					title += `<span con='${i}'>${shuj[i].name}</span>`
+					for(var pre in shuj[i].list){
+//						console.log(shuj[i].list[pre].src)
+						 str +=  `<li>
+										<a href="#">
+											<img src="./${shuj[i].list[pre].src}" alt="" />
+											<p>${shuj[i].list[pre].name}</p>
+											<p>${shuj[i].list[pre].price}</p>
+										</a>
+										<button>加入购物车</button>
+									</li>`
+					}
+				}
+                _btou.innerHTML = title;
+                _shoplist.innerHTML = str;
+               
+                _btou.onclick = function(e){//委托
+					var e=e || event;
+					var target = e.target || e.srcElement;
+					var cname = target.getAttribute("con");
+					 let str = "";
+					for(let pre in shuj[cname].list){
+						console.log(pre)
+						let xiab = shuj[cname].list[i];
+						str +=  `<li>
+										<a href="#">
+											<img src="./${shuj[i].list[pre].src}" alt="" />
+											<p>${shuj[i].list[pre].name}</p>
+											<p>${shuj[i].list[pre].price}</p>
+										</a>
+										<button>加入购物车</button>
+									</li>`
+					}
+					_shoplist.innerHTML = str;
+				}
+			}
+		}
+
+</script>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			body{
+				background-color:chartreuse;
+			}
+			.red{
+				color:red;
+			}
+		</style>
+	</head>
+	<body>
+		用户名：<input type="text" id="uname" /><span id="span1" class="red"></span><br/>
+		密&ensp;&ensp;码：<input type="password" id="psw" /><span id="span2"  class="red"></span><br/>
+		<input type="button" value="登录" id="deng"  />
+	</body>
+</html>
+<script>
+	var _deng = document.getElementById("deng");//登录按钮
+	var _uname = document.getElementById("uname");//用户名框
+	var _psw = document.getElementById("psw");//密码框
+	
+	var _span1 = document.getElementById("span1");
+	var _span2 = document.getElementById("span2");
+	
+		//获取焦点清空
+	_uname.onfocus = function(){
+			_span1.innerHTML = "";
+		}
+		_psw.onfocus = function(){
+			_span2.innerHTML = "";
+		}
+		
+	_deng.onclick = function(){
+		var str = document.cookie;
+		if(str == ""){
+			_span1.innerHTML = "用户名不存在!";
+		}else{
+			let brt = JSON.parse(str.split("=")[1]);
+			if( brt.username == _uname.value ){
+				if( brt.password == _psw.value ){
+					alert("登陆成功！");
+					location.href = "index.html";
+				}else{
+					_span2.innerHTML = "密码错误!";
+				}
+			}else{
+				_span1.innerHTML = "用户名不存在!";
+			}
+		}
+	}
+</script>

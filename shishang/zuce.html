@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			body{
+				background-color:cornflowerblue;
+			}
+			input{
+				width:270px;
+				height:30px;
+			}
+		</style>
+	</head>
+	<body>
+		用户名：<input type="text" id="uname" placeholder="由字母、数字、下划线组成且至少3位" /><span id="span1"></span> <br/>
+		密&ensp;&ensp;码：<input type="password" id="psw" placeholder="至少6位的任意字符" /><span id="span2"></span> <br/>
+		<input type="button" value="注册"  id="zc" />
+	</body>
+</html>
+<script>
+	var _uname = document.getElementById("uname");//用户名框
+	var _psw = document.getElementById("psw");//密码框
+	var _zc = document.getElementById("zc");//注册按钮
+	var s1 = document.getElementById("span1");
+	var s2 = document.getElementById("span2");
+	
+		//获取焦点清空
+	_uname.onfocus = function(){
+			s1.innerHTML = "";
+		}
+		_psw.onfocus = function(){
+			s2.innerHTML = "";
+		}
+		
+	//失去焦点验证正则
+	var flagName = null;
+	_uname.onblur = function(){//验证用户名
+		var reg1 = /^\w{3,}$/;
+		if( reg1.test( _uname.value ) ){
+			s1.innerHTML = "正确";
+			s1.style.color = "green";
+			flagName = true;
+		}else{
+			s1.innerHTML = "由字母、数字、下划线组成且至少3位";
+			s1.style.color = "red";
+			flagName = false;
+		}
+	}
+	var flagPsw = null;
+	_psw.onblur = function(){//验证密码
+		var reg2 = /^.{6,}$/; 
+		if( reg2.test( _psw.value ) ){
+			s2.innerHTML = "正确";
+			s2.style.color = "green";
+			flagPsw = true;
+		}else{
+			s2.innerHTML = "至少6位的任意字符";
+			s2.style.color = "red";
+			flagPsw = false;
+		}
+	}
+	
+	
+	//点击判断 flagName && flagPsw 是否同时为真
+	_zc.onclick = function(){
+		if( flagName && flagPsw ){
+			var json  = {
+				"username":_uname.value,
+				"password":_psw.value
+			}
+			document.cookie = "fff="+JSON.stringify(json);
+			alert("注册成功");
+			location.href = "deng.html";
+		}else{
+			alert("不符合要求！注册失败！");
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+//	document.cookie = "key="+window.encodeURIComponent("胭脂水粉");
+////	document.cookie = "name=lihao;expires=2019/7/12";
+//	var mnm = document.cookie;
+//	var _map=mnm.split(";");
+//		var _item=null;
+//		for(var i=0;i<_map.length;i++){//循环遍历数组
+//             _item=_map[i].split("=");//将数组中的每个元素，进行二次的分割，因为每个键值对中的都有等于号链接，所以也是利用这个特性
+//             if(_item[0].indexOf("key")>=0){//如果键名中含有1911ACart等字样的就是我想要的内容
+//                 console.log(window.decodeURIComponent(_item[1]));//输出指定的value值
+//             }
+//         }
+		
+//	var json = {
+//		"uname":"tom",
+//		"age":20,
+//		"tel":128885466555
+//	}
+//	document.cookie = "oppo="+JSON.stringify(json);
+//	
+//	var mom = document.cookie;
+//	console.log( mom);
+
+
+
+
+</script>
